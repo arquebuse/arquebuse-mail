@@ -8,13 +8,13 @@ import (
 	"time"
 )
 
-var apiVersion string
+var mailVersion string
 var config configuration.Config
 
 func init() {
 	configFile := flag.String("conf", "application.yaml", "Config file to load (default application.yaml.")
 	configuration.Load(configFile, &config)
-	config.MailVersion = apiVersion
+	config.MailVersion = mailVersion
 }
 
 func main() {
