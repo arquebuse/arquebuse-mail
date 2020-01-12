@@ -8,9 +8,6 @@ import (
 )
 
 func Send() {
-
-	// Connect to the server, authenticate, set the sender and recipient,
-	// and send the email all in one step.
 	to := []string{"recipient@example.net"}
 	msg := strings.NewReader("To: recipient@example.net\r\n" +
 		"Subject: discount Gophers!\r\n" +

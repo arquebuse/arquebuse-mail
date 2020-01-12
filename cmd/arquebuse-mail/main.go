@@ -19,6 +19,9 @@ func init() {
 
 func main() {
 	go receiver.Start()
-	time.Sleep(2 * time.Second)
-	sender.Send()
+
+	for ok := true; ok; ok = true {
+		time.Sleep(5 * time.Second)
+		sender.Send()
+	}
 }
