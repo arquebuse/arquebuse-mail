@@ -5,7 +5,6 @@ import (
 	"github.com/arquebuse/arquebuse-mail/pkg/configuration"
 	"github.com/arquebuse/arquebuse-mail/pkg/receiver"
 	"github.com/arquebuse/arquebuse-mail/pkg/sender"
-	"time"
 )
 
 var mailVersion string
@@ -18,10 +17,6 @@ func init() {
 }
 
 func main() {
-	go receiver.Start()
-
-	for ok := true; ok; ok = true {
-		time.Sleep(5 * time.Second)
-		sender.Send()
-	}
+	receiver.Start(&config)
+	sender.Start(&config)
 }

@@ -19,3 +19,6 @@
 *.iws
 *.iml
 *.ipr
+
+# Sample data
+data

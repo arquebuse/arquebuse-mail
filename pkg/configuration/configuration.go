@@ -9,7 +9,16 @@ import (
 
 type Config struct {
 	MailVersion string
-	Data   string `yaml:"data"`
+	DataPath    string `yaml:"dataPath"`
+	Receiver    struct {
+		ListenOn          string `yaml:"listenOn"`
+		Domain            string `yaml:"domain"`
+		ReadTimeout       int    `yaml:"readTimeout"`
+		WriteTimeout      int    `yaml:"writeTimeout"`
+		MaxMessageBytes   int    `yaml:"maxMessageBytes"`
+		MaxRecipients     int    `yaml:"maxRecipients"`
+		AllowInsecureAuth bool   `yaml:"allowInsecureAuth"`
+	} `yaml:"receiver"`
 }
 
 func fileExists(filename string) bool {
@@ -41,7 +50,7 @@ func SearchFile(fileName string) string {
 
 func Load(configFile *string, configuration *Config) {
 	// Default values
-	configuration.Data = "./data"
+	configuration.DataPath = "./data"
 
 	p := SearchFile(*configFile)
 	if p != "" {

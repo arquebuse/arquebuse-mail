@@ -1,1 +1,9 @@
-data: "./data"
+dataPath: "./data"
+receiver:
+  listenOn:          "127.0.0.1:2525"
+  domain:            "localhost"
+  readTimeout:       20
+  writeTimeout:      20
+  maxMessageBytes:   1048576
+  maxRecipients:     50
+  allowInsecureAuth: true
