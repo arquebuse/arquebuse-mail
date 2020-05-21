@@ -7,13 +7,11 @@ import (
 	"github.com/arquebuse/arquebuse-mail/pkg/sender"
 )
 
-var mailVersion string
 var config configuration.Config
 
 func init() {
 	configFile := flag.String("conf", "application.yaml", "Config file to load (default application.yaml.")
 	configuration.Load(configFile, &config)
-	config.MailVersion = mailVersion
 }
 
 func main() {

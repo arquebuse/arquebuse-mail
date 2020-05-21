@@ -8,9 +8,8 @@ import (
 )
 
 type Config struct {
-	MailVersion string
-	DataPath    string `yaml:"dataPath"`
-	Receiver    struct {
+	DataPath string `yaml:"dataPath"`
+	Receiver struct {
 		ListenOn          string `yaml:"listenOn"`
 		Domain            string `yaml:"domain"`
 		ReadTimeout       int    `yaml:"readTimeout"`

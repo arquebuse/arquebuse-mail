@@ -10,4 +10,4 @@ To build from sources:
 
     cd cmd/arquebuse-mail
     go get
-    go build
+    go build -ldflags "-X github.com/arquebuse/arquebuse-mail/pkg/version.GitCommit=$(git rev-parse --short HEAD) -X github.com/arquebuse/arquebuse-mail/pkg/version.Version=snapshot -X github.com/arquebuse/arquebuse-mail/pkg/version.BuildTime=$(date +%Y.%m.%d-%H:%M:%S)"
